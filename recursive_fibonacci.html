@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Why it a bad idea to use recursion method to find the fibonacci of a number</title>
+	<script>
+		MathJax = {
+			tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+		};
+	</script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+	<h1 style="font-weight: bold;">Why is it a bad idea to use recursion method to find the fibonacci of a number</h1>
+	<div style="white-space: pre-line;font-weight: bold; font-size: 20px;padding:">
+		$$T(n) = T(n-1) + T(n-2) + c$$
+		     $$ = 2T(n-2) + c$$   since from the approximation $T(n-1) \approx T(n-2)$
+		     $$= 2 \times (2T(n-4) + c) + c$$
+		     $$= 4T(n-4) + 3c$$
+		     $$= 8T(n-6) + 7c$$
+		     $$= 2^k \times T(n - 2k) + (2^k - 1) \times c$$
+		The last call in the call stack is when $n - 2k = 0$
+		hence we find the value of k at that point when $n - 2k = 0$
+		$$k = n/2$$
+		$$T(n) = 2^{n/2} \times T(0) + (2^{n/2} - 1) \times c$$
+		     $$= 2^{n/2} \times (1 + c) - c$$
+		i.e. $$T(n) \approx 2^{n/2}$$
+	</div>
+</body>
+</html>
