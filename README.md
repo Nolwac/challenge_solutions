@@ -31,8 +31,8 @@ I wrote the program in Python. [Here is the link to the Python program file][pro
 I showed the solution to this problem using MathJax on a HTML webpage. [Here is the link to the math solution][minimum_value].
 
 
-[stock_to_flow]: https://github.com/Nolwac/challenge_solutions/bitcoin_stock_to_flow.md
-[yara_call_option]: https://github.com/Nolwac/challenge_solutions/bitcoin_stock_to_flow.md
-[recursive_fibonacci]: https://github.com/Nolwac/challenge_solutions/bitcoin_stock_to_flow.md
-[proth_prime]: https://github.com/Nolwac/challenge_solutions/bitcoin_stock_to_flow.md
-[minimum_value]: https://github.com/Nolwac/challenge_solutions/bitcoin_stock_to_flow.md
+[stock_to_flow]: https://github.com/Nolwac/challenge_solutions/blob/master/bitcoin_stock_to_flow.md
+[yara_call_option]: http://nwafor.org/challenge_solutions/yara_call_option.html
+[recursive_fibonacci]: http://nwafor.org/challenge_solutions/recursive_fibonacci.html
+[proth_prime]: https://github.com/Nolwac/challenge_solutions/blob/master/proth_prime.py
+[minimum_value]: http://nwafor.org/challenge_solutions/minimum_value.html

@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Why it a bad idea to use recursion method to find the fibonacci of a number</title>
-	<script>
-		MathJax = {
-			tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
-		};
-	</script>
-	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<title>Application for Crypto Research Assistant</title
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<h1 style="font-weight: bold;">Why is it a bad idea to use recursion method to find the fibonacci of a number</h1>
-	<div style="white-space: pre-line;font-weight: bold; font-size: 20px;padding:">
-		$$T(n) = T(n-1) + T(n-2) + c$$
-		     $$ = 2T(n-2) + c$$   since from the approximation $T(n-1) \approx T(n-2)$
-		     $$= 2 \times (2T(n-4) + c) + c$$
-		     $$= 4T(n-4) + 3c$$
-		     $$= 8T(n-6) + 7c$$
-		     $$= 2^k \times T(n - 2k) + (2^k - 1) \times c$$
-		The last call in the call stack is when $n - 2k = 0$
-		hence we find the value of k at that point when $n - 2k = 0$
-		$$k = n/2$$
-		$$T(n) = 2^{n/2} \times T(0) + (2^{n/2} - 1) \times c$$
-		     $$= 2^{n/2} \times (1 + c) - c$$
-		i.e. $$T(n) \approx 2^{n/2}$$
-	</div>
+  <h1>Below are the solutions to the tasks given in the Application</h1>
+  
+  <ol>
+    <li>
+      <h3>Finance</h3>
+      <ul>
+        <li><a href="https://github.com/Nolwac/challenge_solutions/blob/master/bitcoin_stock_to_flow.md">Bitcoin stock to flow model and why it is bad</a></li>
+        <li><a href="yara_call_option.html">Yara Inc call option</a></li>
+      </ul>
+    </li>
+    <li>
+      <h3>Computer Science</h3>
+      <ul>
+        <li><a href="recursive_fibonacci.html">Why recursive fibonacci Algorithm is bad</a></li>
+        <li><a href="https://github.com/Nolwac/challenge_solutions/blob/master/proth_prime.py">Function to check if a proth number is prime</a></li>
+      </ul>
+    </li>
+    <li>
+      <h3>Mathematics</h3>
+      <ul>
+        <li><a href="minimum_value.html">Minimum value of a function</a></li>
+      </ul>
+    </li>
+  </ol>
 </body>
 </html>

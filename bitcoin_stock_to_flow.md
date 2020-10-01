@@ -2,6 +2,8 @@
 A stock be it a digital stock or physical stock has the following 2 metrics at least.
 1. Amount available in the market.
 2. Rate of production.
+
+
 The amount available in the market is a metrics which defines the sum total of the stock available in the market. A good example is the amount of as specific finance textbook available in the market.
 The rate of production is the metrics which defines how slowly or fast the given stock is produced. It has to do with the amount produced per time.
 Bitcoin Stock to flow model
@@ -11,9 +13,12 @@ There are 4 scenarios that are possible in this which could either translate to 
 2.	When the rate of consumption of the stock is low (meaning that the stock is barely leaving the market, people are barely buying) and the production rate of the stock is high. Then the stock to flow ratio will be low, which translates to availability and reduced price.
 3.	When the rate of consumption of the stock is high and the production rate of the stock is low. Then the stock to flow ratio will be high, which translates to scarcity and increased price.
 4.	When the rate of consumption of the stock is low and the production rate is low. Then the stock to flow ratio will be on average, it is neither scarce nor abundantly available and the price is neutral.
+
+
 This is a lay man’s view of the argument presented by PlanB (@100trillionUSD).
 Why Bitcoin Stock to flow model is bad.
 Unfortunately there is a big problem with this model, as it does not hold over a long period of time, coupled with the incompleteness of the statistical proof of the model.
+
 Below are the reasons why the model is erroneous:
 1.	PlanB’s concept of a stock to flow ratio predicting the price of a commodity is wrong as there are a lot of factors which could affect price and the statistical data of the price of Gold with respect its stock to flow ratio was shown by (Cordeiro, 2020) to be wrong since the price of Gold has increased over the years meanwhile its stock to flow ratio has been 60 over a long period of time.
 2.	The stock to flow model projects that the prize of bitcoin will approach infinity, in fact it projects bitcoin’s prize to be over a trillion USD in 25 years’ time.

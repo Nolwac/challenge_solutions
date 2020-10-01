@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Minimum value of a function</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
 		MathJax = {
 			tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
@@ -9,12 +10,54 @@
 	</script>
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+	  body{
+	    padding:10px;
+	  }
+	</style>
 </head>
 <body>
-	<h3 style="font-weight: bold;">Over all real numbers, find the minimum value of a positive real number, y such that:<br>
-		<strong>y = sqrt((x+6)^2 + 25) + sqrt((x-6)^2 + 121)</strong></h3>
-	<div style="white-space: pre-line;font-weight: bold; font-size: 20px;padding:">
+	<p style="font-weight: bold;">Over all real numbers, find the minimum value of a positive real number, y such that:<br>
+		<strong>$$y = \sqrt{(x+6)^2 + 25} + \sqrt{(x-6)^2 + 121}$$</strong></p>
+	<article style="white-space: pre-line;font-weight: bold; font-size: 15px;">
+		<center><h2>Solution</h2></center>
+		The first step will be to expand the expressions inside the square root.
 		
-	</div>
+		hence:
+		$$y =  (x^2 + 12x +61)^{1/2} + (x^2 - 12x + 157)^{1/2} $$
+		A function has its minimum where the following condition is met:
+		
+		1. Turning point of the curve, at this point the first derivative of the is 0.
+		
+		2. If we substitute the value of the independent variable to the secokd derivative of the function and it is positive.
+		
+		Okay! so we will have to take the firsg derivative of $y$ and equate it to $0$ to compute for $x$ which is the value at the turning point, otherwise called critical point.
+		
+		Differentiating $y$ with respect to $x$.
+		we will have to do differentiation by part.
+		so let $$u= x^2 + 12x + 61$$
+		and $$v= x^2 - 12x +157$$
+		hence we can say that:
+		$$y= u^{1/2} + v^{1/2}$$
+		therefore:
+		$$\frac{dy}{du} = \frac{1}{2} u^{-1/2}$$
+    $$\frac{dy}{dv} = \frac{1}{2} v^{-1/2}$$
+    $$\frac{du}{dx} = 2x + 12$$
+    $$\frac{dv}{dx} = 2x - 12$$
+    $$\frac{dy}{dx} = \frac{dy}{du} \times \frac{du}{dx} + \frac{dy}{dv} \times \frac{dv}{dx}$$
+    $$= \frac{1}{2} u^{-1/2} \times (2x + 12) + \frac{1}{2} v^{-1/2} \times (2x - 12)$$
+    substituting for both $u$ and $v$ we have:
+    $$= \frac{1}{2} (x^2 + 12x + 61)^{-1/2} \times (2x + 12)$$ 
+    $$+  \frac{1}{2} (x^2 -12x + 157)^{-1/2} \times (2x - 12)$$
+    Since at minimum $\frac{dy}{dx} = 0$ we can equate to 0.
+    $$0 = \frac{1}{2} (x^2 + 12x + 61)^{-1/2} \times (2x + 12)$$ 
+    $$+  \frac{1}{2} (x^2 -12x + 157)^{-1/2} \times (2x - 12)$$
+    This implies that:
+   
+    $$(x^2 + 12x + 61)^{-1/2} \times (x + 6)$$ 
+    $$= -[(x^2 -12x + 157)^{-1/2} \times (x - 6)]$$
+    Taking the square of both sides:
+    $$\frac{(x + 6)^2}{(x^2 + 12x + 61)} = \frac{(x - 6)^2}{(x^2 - 12x + 157)}$$
+	</article>
 </body>
 </html>

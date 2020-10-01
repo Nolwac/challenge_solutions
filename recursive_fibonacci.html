@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Why it a bad idea to use recursion method to find the fibonacci of a number</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
 		MathJax = {
 			tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
@@ -9,10 +10,28 @@
 	</script>
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<style>
+	  body{
+	    padding:10px;
+	  }
+	</style>
 </head>
 <body>
-	<h1 style="font-weight: bold;">Why is it a bad idea to use recursion method to find the fibonacci of a number</h1>
-	<div style="white-space: pre-line;font-weight: bold; font-size: 20px;padding:">
+	<h1 style="font-weight: bold;">Why it is a bad idea to use recursion method to find the fibonacci of a number</h1>
+	<article style="white-space: pre-line;font-weight: bold; font-size: 15px;">
+	  The reason why recursive method of finding the fibonacci of a number is bad compared to the iterative method is because of the time and space complexity. To understand what this actually means it is necessary to take a look at the recursive code and the iterative code.
+	  <pre>def fib(n):
+    if n <= 1:
+        return 1
+    else:
+    	return fib(n - 1) + fib(n - 2)
+#code written in Python</pre>
+  so let's consider when $n > 1$, then we can say that:
+  $$T(n) = T(n-1) + T(n-2) + 4$$
+  where $T(n)$ is the time taken to run the function, $fib(n)$ and
+  the constant, 4 represents 1 comparison, 2 subtractions and 1 addition that was done in the function
+  Let’s say c = 4 and try to first establish a lower bound by approximating that T(n-1) ~ T(n-2) , though T(n-1) ≥ T(n-2), hence lower bound
+
 		$$T(n) = T(n-1) + T(n-2) + c$$
 		     $$ = 2T(n-2) + c$$   since from the approximation $T(n-1) \approx T(n-2)$
 		     $$= 2 \times (2T(n-4) + c) + c$$
@@ -25,6 +44,45 @@
 		$$T(n) = 2^{n/2} \times T(0) + (2^{n/2} - 1) \times c$$
 		     $$= 2^{n/2} \times (1 + c) - c$$
 		i.e. $$T(n) \approx 2^{n/2}$$
-	</div>
+		
+    now for the upper bound, we can approximate $T(n-2) \approx T(n-1)$ as $T(n-2) ≤ T(n-1)$
+    $$T(n) = T(n-1) + T(n-2) + c$$
+      $$= 2T(n-1) + c$$
+      since from the approximation $T(n-1) \approx T(n-2)$
+      $$= 2 \times (2T(n-2) + c) + c$$
+      $$= 4T(n-2) + 3c$$
+      $$= 8T(n-3) + 7c$$
+      $$= 2^k \times T(n - k) + (2^k - 1) \times c$$
+    Let's find the value of k for which: $n - k = 0$
+    $$k = n$$
+    $$T(n) = 2^n \times T(0) + (2^n - 1) \times c$$
+       $$= 2^n \times (1 + c) - c$$
+    i.e. $$T(n) \approx 2^n$$
+    Hence we can conclude that the time taken by recursive Fibonacci is $O(2^n)$ or exponential.
+    
+    The space complexity is a the depth of the call recursive call stack, as those are stored in the memory for reference. Hence the space complexity will be $O(n)$ 
+    
+    Now let's consider the time and space complexity for the iterative method.
+    A sample code for the iterative method is shown below.
+    <pre>def fib(n):
+    first = 1
+    second = 1
+    current = 1
+    while n>=2:
+    	current = first + second
+    	first = second
+    	second = current
+    	n = n -1
+    return current
+#written in Python
+    </pre>
+    Looking at the program above, we cam deduce that:
+    $$T(n) = 7n + 3$$
+    where the coefficient $6$ represents 1 comparison taking place at the condition for the loop to execute, 4 assignments, 1 subtraction and 1 addition taking place inside the loop and the constant value $3$ represents the 3 assignment above the while loop.
+    Hence we can say that the time complexity for the iterative fibonacci is $ \approx O(n)$ which is linear time.
+    Then the space complexity of the iterative fibonacci is $\approx O(c)$ which is constant space, this is because no matter the depth of the loop, only 4 memory locations used in storing the values of the variables $first$, $second$, $current$ and $n$ are used.
+    
+    <h2>With this we can conclude that recursive approach of finding the fibonacci of a number is a bad idea since it takes more time and computing memory to execute</h2>
+	</article>
 </body>
 </html>

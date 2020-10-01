@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Yara Inc Call Option</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script>
 		MathJax = {
 			tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
@@ -9,11 +10,42 @@
   	</script>
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <style>
+	  body{
+	    padding:10px;
+	  }
+	</style>
 </head>
 <body>
-	<h3 style="font-weight: bold;">Yara Inc is listed on the NYSE with a stock price of $40 - the company is not known to pay dividends. We need to price a call option with a strike of $45 maturing in 4 months. The continuously-compounded risk-free rate is 3%/year, the mean return on the
-stock is 7%/year, and the standard deviation of the stock return is 40%/year. What is the Black-Scholes call price? of a number</h3>
-	<div style="white-space: pre-line;font-weight: bold; font-size: 20px;padding:">
-	</div>
+	<h3 style="font-weight: bold;">Yara Inc is listed on the NYSE with a stock price of $ \$40 $ - the company is not known to pay dividends. We need to price a call option with a strike of $ \$45 $ maturing in 4 months. The continuously-compounded risk-free rate is 3%/year, the mean return on the
+stock is 7%/year, and the standard deviation of the stock return is 40%/year. What is the Black-Scholes call price?</h3>
+	<article style="white-space: pre-line;font-weight: bold; font-size: 15px;">
+	  <content><h2>Solution</h2></center>
+	  Black-Scholes call price, denoted as $c$ is given by:
+	  $$c = SN(d1) - Xe^{-rT}N(d2)$$
+	  where $$d1 = \frac{ln(S/X) + (r + \alpha^2/2)T}{\alpha \sqrt T }$$
+	  $$ d2 = d1 - \alpha \sqrt T $$
+	  $N(d) =$ area under the standard normal distribution curve for $z = d$
+	  $S =$ stock price $= 40$
+	  $X =$ strike price $= 45$
+	  $r =$ risk free rate $= 3 percent = 0.03$
+	  $\alpha =$ standard deviation $= 40 percent = 0.4$
+	  hence $\alpha^2 = 0.16$
+	  $T = 4$ months $= 1/3$
+	  substituting the values into $d1$ :
+	  $$ d1 = \frac{ln(40/45) + (0.03 + 0.16/2)\times 1/3}{0.4 \sqrt {1/3}} $$
+	  $$\approx -0.3512$$
+	  But the mean return on stock is $7 percent = 0.07$ This implies that the mean is shifted with respect to the standard normal distribution model, hence to account for the shift, we need to add the mean value to $d1$ which is the $z$ value.
+	  therefore:
+	  $$d1 = -0.3512 + 0.07 = -0.2812$$
+	  hence:
+	  $$d2 = -0.2812 - 0.4 \sqrt {1/3} = -0.5121$$
+	  Using the standard z-table for normal distribution:
+	  $N(d1) = 0.38928$ and $N(d2) = 0.30429$
+	  Hence we can now calculate for $C$ using the given values and the calculated values.
+	  $$ C = 40 \times 0.38928 - 45 \times e^{0.03 \times 1/3} \times 0.30429$$
+	  $$= 2.0144$$
+	  Hence the Black-Scholes call price is $\$2.0144$
+	</article>
 </body>
 </html>
